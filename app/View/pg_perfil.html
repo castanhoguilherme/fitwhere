@@ -11,8 +11,13 @@
 
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
-
+        <!-- Morris Charts CSS -->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
     </head>
+
     <body>
 
         <div class="container-fluid">
@@ -76,18 +81,7 @@
 
                 </div>
                 <div class="col-md-4">
-                    <form role="form">
-                        <div class="form-group">
-
-                            <label for="comentario">
-                                
-                            </label>
-                            <input type="text" class="form-control input-lg" id="comentario" value="Como está seu treino?">
-                        </div>
-                       <button type="submit" class="btn btn-default">
-                           Postar
-                        </button>
-                    </form>
+                    
                 </div>
                 <div class="col-md-1">
                 </div>
@@ -107,39 +101,64 @@
                         <li class="list-group-item">Corridas <span class="badge">3</span></li>
                     </ul>
                 </div>
-                <div class="col-md-4">
-                    <p>
-                        Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
-                    </p>
-                    <div class="btn-group btn-group-justified">
-                        <a href="#" class="btn btn-default btn-sm">Curtir</a>
-                        <a href="#" class="btn btn-default btn-sm">Comentar</a>
-                        <a href="#" class="btn btn-default btn-sm">Compartilhar</a>
-                    </div>
-                    <p>
-                        Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
-                    </p>
-                    <div class="btn-group btn-group-justified">
-                        <a href="#" class="btn btn-default btn-sm">Curtir</a>
-                        <a href="#" class="btn btn-default btn-sm">Comentar</a>
-                        <a href="#" class="btn btn-default btn-sm">Compartilhar</a>
-                    </div>
-                </div>
-                <div class="col-md-1">
-                </div>
-                <div class="col-md-2">
-                </div>
-                <div class="col-md-1">
+                <div class="col-md-7">
+                   <h2>Corridas</h2>
+                   <div id="morris-bar-chart-corridas" style="height: 250px;" align="center"></div>
+                   <h2>Musculação</h2>
+                   <div id="morris-bar-chart-musculacao" style="height: 250px;"align="center">></div>
+
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                </div>
+            
+            <div class="col-md-1">
             </div>
         </div>
-
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/scripts.js"></script>
-    </body>
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>
+    </div>
+    <script> 
+                
+        new Morris.Bar({
+        element: 'morris-bar-chart-corridas',
+        data: [
+            {y: 'Segunda', a: 100, b: 90},
+            {y: 'Terça', a: 75,  b: 65},
+            {y: 'Quarta', a: 50,  b: 40}, 
+            {y: 'Quinta', a: 75,  b: 65},
+            {y: 'Sexta', a: 50,  b: 40},
+            {y: 'Sabado', a: 75,  b: 65},
+            {y: 'Domingo', a: 100, b: 90}
+            ],
+        xkey: 'y',
+        ykeys: 'a',
+        labels: 'Corrida',
+        hideHover: 'auto',
+        resize: true
+    });
+        new Morris.Bar({
+        element: 'morris-bar-chart-musculacao',
+        data: [
+            {y: 'Segunda', a: 100, b: 90},
+            {y: 'Terça', a: 75,  b: 65},
+            {y: 'Quarta', a: 50,  b: 40}, 
+            {y: 'Quinta', a: 75,  b: 65},
+            {y: 'Sexta', a: 50,  b: 40},
+            {y: 'Sabado', a: 75,  b: 65},
+            {y: 'Domingo', a: 100, b: 90}
+            ],
+        xkey: 'y',
+        ykeys: 'a',
+        labels: 'Corrida',
+        hideHover: 'auto',
+        resize: true
+    });
+        
+        
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
 </html>
