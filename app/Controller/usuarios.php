@@ -1,5 +1,6 @@
 <?php
 require_once 'crud.php';
+
 class Usuarios extends Crud{
 	
 	protected $table = 'usuarios';
