@@ -1,6 +1,7 @@
+
 <?php
 function __autoload($class_name){
-require_once '../controller' . $class_name . '.php';
+require_once '../controller/' . $class_name . '.php';
 
 }
 
@@ -21,18 +22,6 @@ require_once '../controller' . $class_name . '.php';
 
     </head>
     <body>
-        <?php
-        $usuario = new Usuarios();
-        if(isset($_POST['cadastrar']));
-
-        $nome        = $_POST['nome'];
-        $email       = $_POST['email'];
-        $bairro      = $_POST['bairro'];
-        $dnascimento = $_POST['nome'];
-        $senha       = $_POST['senha'];
-
-        ?>
-
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-1">
@@ -56,10 +45,8 @@ require_once '../controller' . $class_name . '.php';
                 <div class="col-md-1">
                 </div>
                 <div class="col-md-4">
-                    <form role="form" action="pg_inicial.html">
-
+                    <form role="form" method="post" action="pg_inicial.html">
                         <div class="form-group">
-
                             <label for="nome">
                                 Nome
                             </label>
@@ -98,23 +85,42 @@ require_once '../controller' . $class_name . '.php';
                             </label>
                             <input type="date" class="form-control" id="datanascimento">
                         </div>
-
-
-                        <button type="submit" class="btn btn-default">
+                            <button type="submit" name="cadastrar" class="btn btn-default">
                             Cadastre
                         </button>
+                        
+                        
                     </form>
+                    <?php
+                            $usuario = new Usuarios();
+                            if (isset($_POST['cadastrar'])):
+                            $nome = $_POST['nome'];
+                            $sobrenome = $_POST['sobrenome'];
+                            $email = $_POST['email'];
+                            $bairro = $_POST['bairro'];
+                            $senha = $_POST['senha'];
+                            $dnascimento = $_POST['nome'];
+
+                            $usuario->setNome($nome);
+                            $usuario->setSobrenome($sobrenome);
+                            $usuario->setEmail($email);
+                            $usuario->setBairro($bairro);
+                            $usuario->setSenha($senha);
+                            $usuario->setNascimento($dnascimento);
+
+                            if($usuario->insert()){
+                                echo "inserido";
+                            }endif;
+                        ?>
                 </div>
                 <div class="col-md-1">
                 </div>
                 <div class="col-md-2">
-
                 </div>
                 <div class="col-md-1">
                 </div>
             </div>
         </div>
-
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/scripts.js"></script>

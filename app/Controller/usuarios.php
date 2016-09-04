@@ -6,9 +6,11 @@ class Usuarios extends Crud {
 
     protected $table = 'tb_usuarios';
     private $nome;
+    private $sobrenome;
     private $email;
     private $bairro;
-    private $data_nascimento;
+    private $senha;
+    private $dnascimento;
 
     public function setNome($nome) {
         $this->nome = $nome;
@@ -16,6 +18,14 @@ class Usuarios extends Crud {
 
     public function getNome() {
         return $this->nome;
+    }
+    
+    public function setSobrenome($sobrenome) {
+        $this->sobrenome = $sobrenome;
+    }
+
+    public function getSobrenome() {
+        return $this->sobrenome;
     }
 
     public function setEmail($email) {
@@ -33,6 +43,14 @@ class Usuarios extends Crud {
     public function getBairro() {
         return $this->bairro;
     }
+    
+    public function setSenha($senha) {
+        $this->senha = $senha;
+    }
+
+    public function getSenha() {
+        return $this->senha;
+    }
 
     public function setNascimento($data_nascimento) {
         $this->dnascimento = $data_nascimento;
@@ -42,20 +60,24 @@ class Usuarios extends Crud {
     }
 
     public function insert(){
-		$sql  = "INSERT INTO $this->table (nome, email, bairro, data_nascimento) VALUES (:nome, :email, :bairro, :data_nascimento)";
+		$sql  = "INSERT INTO $this->table (nome, sobrenome, email, bairro, senha, data_nascimento) VALUES (:nome, :sobrenome, :email, :bairro, :senha, :data_nascimento)";
 		$stmt = DB::prepare($sql);
 		$stmt->bindParam(':nome', $this->nome);
+                $stmt->bindParam(':sobrenome', $this->sobrenome);
 		$stmt->bindParam(':email', $this->email);
                 $stmt->bindParam(':bairro', $this->bairro);
+                $stmt->bindParam(':senha', $this->senha);
                 $stmt->bindParam(':data_nascimento', $this->dnascimento);                
 		return $stmt->execute(); 
 	}
 	public function update($id){
-		$sql  = "UPDATE $this->table SET nome = :nome, email = :email bairro = :bairro data_nascimento = :data_nascimento WHERE id = :id";
+		$sql  = "UPDATE $this->table SET nome = :nome, sobrenome = :sobrenome, email = :email, bairro = :bairro, senha = :senha, data_nascimento = :data_nascimento WHERE id = :id";
 		$stmt = DB::prepare($sql);
 		$stmt->bindParam(':nome', $this->nome);
+                $stmt->bindParam(':sobrenome', $this->sobrenome);
 		$stmt->bindParam(':email', $this->email);
                 $stmt->bindParam(':bairro', $this->bairro);
+                $stmt->bindParam(':senha', $this->senha);
                 $stmt->bindParam(':data_nascimento', $this->dnascimento);
 		$stmt->bindParam(':id', $id);
 		return $stmt->execute();

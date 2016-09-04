@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php';
-class DB{
+class BD{
 	private static $instance;
 	public static function getInstance(){
 		if(!isset(self::$instance)){
