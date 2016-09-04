@@ -28,13 +28,13 @@
 
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                                 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                            </button> <a class="navbar-brand" href="#">FITWHERE</a>
+                            </button> <a class="navbar-brand" href="pg_inicial.html">FITWHERE</a>
                         </div>
 
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
                                 <li class="active">
-                                    <a href="#"><span class="glyphicon glyphicon-user"></span> Perfil </a>
+                                    <a href="pg_perfil.html"><span class="glyphicon glyphicon-user"></span> Perfil </a>
                                 </li>
                                 <li>
                                     <a href="#"><span class="glyphicon glyphicon-bishop"></span> Treinos </a>
@@ -81,83 +81,83 @@
 
                 </div>
                 <div class="col-md-6" align="center">
-                    
-                        <h2>Treinos</h2>
-                    
-                </div>
 
-                    <div class="col-md-1">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-1">
-                    </div>
-                    <div class="col-md-3">
-                        <ul class="list-group">
-                            <li class="list-group-item">Caminhada <span class="badge">12</span></li>
-                            <li class="list-group-item">Musculação <span class="badge">5</span></li> 
-                            <li class="list-group-item">Natação <span class="badge">3</span></li>
-                            <li class="list-group-item">Corridas <span class="badge">3</span></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <h3>Corridas</h3>
-                        <div id="morris-bar-chart-corridas" style="height: 250px;" align="center"></div>
-                        <h3>Musculação</h3>
-                        <div id="morris-bar-chart-musculacao" style="height: 250px;"align="center"></div>
+                    <h2>Treinos</h2>
 
-                    </div>
                 </div>
 
                 <div class="col-md-1">
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-3">
+                    <ul class="list-group">
+                        <li class="list-group-item">Amigos <span class="badge">12</span></li>
+                        <li class="list-group-item">Professores <span class="badge">5</span></li> 
+                        <li class="list-group-item">Natação <span class="badge">3</span></li>
+                        <li class="list-group-item">Corridas <span class="badge">3</span></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3>Corridas</h3>
+                    <div id="morris-bar-chart-corridas" style="height: 250px;" align="center"></div>
+                    <h3>Musculação</h3>
+                    <div id="morris-bar-chart-musculacao" style="height: 250px;" align="center"></div>
+
                 </div>
             </div>
+
+            <div class="col-md-1">
+            </div>
         </div>
-        <script> 
-                
-            new Morris.Bar({
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>
+    
+    <script>
+
+        new Morris.Bar({
             element: 'morris-bar-chart-corridas',
             data: [
                 {y: 'Segunda', a: 100, b: 90},
-                {y: 'Terça', a: 75,  b: 65},
-                {y: 'Quarta', a: 50,  b: 40}, 
-                {y: 'Quinta', a: 75,  b: 65},
-                {y: 'Sexta', a: 50,  b: 40},
-                {y: 'Sabado', a: 75,  b: 65},
+                {y: 'Terça', a: 75, b: 65},
+                {y: 'Quarta', a: 50, b: 40},
+                {y: 'Quinta', a: 75, b: 65},
+                {y: 'Sexta', a: 50, b: 40},
+                {y: 'Sabado', a: 75, b: 65},
                 {y: 'Domingo', a: 100, b: 90}
-                ],
+            ],
             xkey: 'y',
             ykeys: 'a',
             labels: 'Corrida',
             hideHover: 'auto',
             resize: true
         });
-            new Morris.Bar({
+        new Morris.Bar({
             element: 'morris-bar-chart-musculacao',
             data: [
                 {y: 'Segunda', a: 100, b: 90},
-                {y: 'Terça', a: 75,  b: 65},
-                {y: 'Quarta', a: 50,  b: 40}, 
-                {y: 'Quinta', a: 75,  b: 65},
-                {y: 'Sexta', a: 50,  b: 40},
-                {y: 'Sabado', a: 75,  b: 65},
+                {y: 'Terça', a: 75, b: 65},
+                {y: 'Quarta', a: 50, b: 40},
+                {y: 'Quinta', a: 75, b: 65},
+                {y: 'Sexta', a: 50, b: 40},
+                {y: 'Sabado', a: 75, b: 65},
                 {y: 'Domingo', a: 100, b: 90}
-                ],
+            ],
             xkey: 'y',
             ykeys: 'a',
             labels: 'Corrida',
             hideHover: 'auto',
             resize: true
         });
-        
-        
-        </script>
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/scripts.js"></script>
-    </body>
+
+
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
 </html>
