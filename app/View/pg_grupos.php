@@ -23,50 +23,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <nav class="navbar navbar-default navbar-static-top" role="navigation">
-                        <div class="navbar-header">
-
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                            </button> <a class="navbar-brand" href="pg_inicial.html">FITWHERE</a>
-                        </div>
-
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav">
-                                <li class="active">
-                                    <a href="pg_perfil.html"><span class="glyphicon glyphicon-user"></span> Perfil </a>
-                                </li>
-                                <li>
-                                    <a href="#"><span class="glyphicon glyphicon-bishop"></span> Treinos </a>
-                                </li>
-                                <li>
-                                    <a href="#"><span class="glyphicon glyphicon-tasks"></span> Grupos </a>
-                                </li>
-                                <li>
-                                    <a href="#"><span class="glyphicon glyphicon-bell"></span> Artigos </a>
-                                </li>
-
-                            </ul>
-
-                            <ul class="nav navbar-nav navbar-right">
-
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Guilherme <strong class="caret"></strong></a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="#"><span class="glyphicon glyphicon-edit"></span> Configurações</a>
-                                        </li>
-                                        <li class="divider">
-                                        </li>
-                                        <li>
-                                            <a href="cadastro.html"><span class="glyphicon glyphicon-log-in"></span> Sair</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </nav>
+                     <?php include('../Model/bar_nav.php'); ?>
                 </div>
             </div>
             <div class="row">
@@ -93,12 +50,7 @@
                 <div class="col-md-1">
                 </div>
                 <div class="col-md-3">
-                    <ul class="list-group">
-                        <li class="list-group-item">Amigos <span class="badge">12</span></li>
-                        <li class="list-group-item">Professores <span class="badge">5</span></li> 
-                        <li class="list-group-item">Natação <span class="badge">3</span></li>
-                        <li class="list-group-item">Corridas <span class="badge">3</span></li>
-                    </ul>
+                    <?php include('../Model/bar_lateral.php'); ?>
                 </div>
                 <div class="col-md-6">
                     <h3>Corridas</h3>

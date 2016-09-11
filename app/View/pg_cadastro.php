@@ -1,4 +1,3 @@
-
 <?php
 function __autoload($class_name){
 require_once '../controller/' . $class_name . '.php';
@@ -45,7 +44,7 @@ require_once '../controller/' . $class_name . '.php';
                 <div class="col-md-1">
                 </div>
                 <div class="col-md-4">
-                    <form role="form" method="post" action="pg_inicial.html">
+                    <form role="form" method="post" action="pg_inicial.php">
                         <div class="form-group">
                             <label for="nome">
                                 Nome
